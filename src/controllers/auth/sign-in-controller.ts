@@ -38,13 +38,11 @@ export const signinController = async (req: Request, res: Response) => {
         sameSite: "lax",
         secure: true,
         expires: new Date(Date.now() + 3600 * 1000),
-        domain: 'next-jwt-authentication-murex.vercel.app'
       })
       .cookie("refreshToken", refreshToken, {
         sameSite: "lax",
         secure: true,
         expires: new Date(Date.now() + 86400 * 1000),
-        domain: 'next-jwt-authentication-murex.vercel.app'
       })
       .json({
         success: true,
