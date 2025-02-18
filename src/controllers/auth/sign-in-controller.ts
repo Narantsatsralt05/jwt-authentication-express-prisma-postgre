@@ -36,9 +36,11 @@ export const signinController = async (req: Request, res: Response) => {
     res
       .cookie("accessToken", accessToken, {
         sameSite: "none",
+        secure: true
       })
       .cookie("refreshToken", refreshToken, {
         sameSite: "none",
+        secure: true
       })
       .json({
         success: true,
