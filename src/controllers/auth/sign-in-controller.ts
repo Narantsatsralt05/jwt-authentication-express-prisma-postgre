@@ -35,13 +35,13 @@ export const signinController = async (req: Request, res: Response) => {
     const accessToken = generateAccessToken(user.id);
     res
       .cookie("accessToken", accessToken, {
-        sameSite: "none",
+        sameSite: "lax",
         secure: true,
         expires: new Date(Date.now() + 3600 * 1000),
         domain: 'next-jwt-authentication-murex.vercel.app'
       })
       .cookie("refreshToken", refreshToken, {
-        sameSite: "none",
+        sameSite: "lax",
         secure: true,
         expires: new Date(Date.now() + 86400 * 1000),
         domain: 'next-jwt-authentication-murex.vercel.app'
