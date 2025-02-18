@@ -4,6 +4,6 @@ import { verify } from "../verify";
 
 export const userRouter = express.Router();
 
-userRouter.get('/users',verify, getUsers)
+userRouter.get('/users', getUsers)
 
 

@@ -35,12 +35,10 @@ export const signinController = async (req: Request, res: Response) => {
     const accessToken = generateAccessToken(user.id);
     res
       .cookie("accessToken", accessToken, {
-        httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
       })
       .cookie("refreshToken", refreshToken, {
-        httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
       })
       .json({
         success: true,
