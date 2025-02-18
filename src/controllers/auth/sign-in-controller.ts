@@ -49,6 +49,6 @@ export const signinController = async (req: Request, res: Response) => {
     success: false,
     message: "Check your password",
     code: "PASSWORD_INCORRECT",
-    data: null,
+    result: null,
   });
 };
