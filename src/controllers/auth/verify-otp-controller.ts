@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { prisma } from "../..";
+import { prisma } from "../../../api";
 
 export const verifyOtpController = async (req: Request, res: Response) => {
   const { email, userOtp } = req.body;

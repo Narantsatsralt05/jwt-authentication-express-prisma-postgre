@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
-import { authRouter } from "./routers/auth-router";
-import { userRouter } from "./routers/user-router";
+import { authRouter } from "../src/routers/auth-router";
+import { userRouter } from "../src/routers/user-router";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -30,3 +30,5 @@ app.listen(process.env.PORT, () =>
 `)
 );
 export const prisma = new PrismaClient();
+
+export default app;

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { prisma } from "../..";
+import { prisma } from "../../../api";
 import bcrypt from "bcryptjs";
 
 export const updatePasswordController = async (req: Request, res: Response) => {

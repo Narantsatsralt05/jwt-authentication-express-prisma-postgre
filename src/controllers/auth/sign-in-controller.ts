@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { Request, Response } from "express";
-import { prisma } from "../..";
+import { prisma } from "../../../api";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { generateAccessToken } from "../../generateAccessToken";
@@ -36,13 +36,11 @@ export const signinController = async (req: Request, res: Response) => {
     res
       .cookie("accessToken", accessToken, {
         sameSite: "none",
-        httpOnly: true,
         secure: true,
         expires: new Date(Date.now() + 3600 * 1000),
       })
       .cookie("refreshToken", refreshToken, {
         sameSite: "none",
-        httpOnly: true,
         secure: true,
         expires: new Date(Date.now() + 86400 * 1000),
       })

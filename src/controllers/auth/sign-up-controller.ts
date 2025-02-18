@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { Request, Response } from "express";
-import { prisma } from "../..";
+import { prisma } from "../../../api";
 import bcrypt from 'bcryptjs'
 
 export const signupController = async (req: Request, res: Response) => {

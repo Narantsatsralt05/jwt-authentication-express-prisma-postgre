@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { prisma } from "../..";
+import { prisma } from "../../../api";
 import nodemailer from "nodemailer";
 
 export const requestOtpController = async (req: Request, res: Response) => {
