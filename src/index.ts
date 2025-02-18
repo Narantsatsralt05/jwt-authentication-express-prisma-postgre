@@ -9,13 +9,19 @@ dotenv.config();
 
 const app = express();
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: ["http://localhost:3001", "next-jwt-authentication-murex.vercel.app"] }));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "http://localhost:3001",
+      "https://next-jwt-authentication-murex.vercel.app",
+    ],
+  })
+);
 app.use(express.json());
 
 app.use("/auth", authRouter);
 app.use(userRouter);
-
-
 
 app.listen(process.env.PORT, () =>
   console.log(`
