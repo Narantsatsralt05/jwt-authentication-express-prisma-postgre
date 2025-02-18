@@ -8,6 +8,7 @@ export const verify = (req: Request, res: Response, next: NextFunction) => {
     return;
   }
 
+
   try {
     jwt.verify(accessToken!, process.env.ACCESS_TOKEN_SECRET!);
     next();

@@ -33,22 +33,15 @@ export const signinController = async (req: Request, res: Response) => {
     );
 
     const accessToken = generateAccessToken(user.id);
-    res
-      .cookie("accessToken", accessToken, {
-        sameSite: "none",
-        secure: true,
-        expires: new Date(Date.now() + 3600 * 1000),
-      })
-      .cookie("refreshToken", refreshToken, {
-        sameSite: "none",
-        secure: true,
-        expires: new Date(Date.now() + 86400 * 1000),
-      })
-      .json({
-        success: true,
-        message: "Successfully signed in",
-        code: "SIGNED_IN",
-      });
+    res.json({
+      success: true,
+      message: "Successfully signed in",
+      code: "SIGNED_IN",
+      result: {
+        accessToken,
+        refreshToken,
+      },
+    });
     return;
   }
 
