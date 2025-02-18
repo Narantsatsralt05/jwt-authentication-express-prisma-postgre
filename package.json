@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "bunx prisma generate && bunx tsc",
+    "build": "bunx prisma generate --no-engine && bunx tsc",
     "start": "node dist/src/index.js",
     "dev": "nodemon src/index.ts"
   },
